@@ -3,6 +3,7 @@ class calcController{ // criando um objeto, inicia pela classe que vai conter va
                         
 
     constructor(){ // metodo (função)
+        this._operation = [];
         this._locale = 'pt-BR';
         this._displayCalcEl = document.querySelector("#display");
         this._dateEl = document.querySelector("#data");
@@ -32,7 +33,42 @@ class calcController{ // criando um objeto, inicia pela classe que vai conter va
 
     }
 
-    
+    clearAll(){
+
+
+    }
+
+    clearEntry(){
+
+
+    }
+
+    execBtn(value){
+        switch (vauer){
+            case 'ac':
+                this.clearAll();
+                break;
+            
+            case 'ce':
+                this.clearEntry();
+                break;
+            
+            case 'soma':
+                break;
+
+            case 'divisao':
+                break;
+
+            case 'multiplicacao':
+                break;
+
+            case 'porcentro':
+                break;
+
+            case 'igual':
+                break;
+        }
+    }
 
     initButtonsEvents(){
 
@@ -42,7 +78,9 @@ class calcController{ // criando um objeto, inicia pela classe que vai conter va
 
             this.addEventListenerAll(btn, "click drag" , e => {
 
-                console.log(btn.className.baseVal.replace("btn - ",""));
+                let textBtn = btn.className.baseVal.replace("btn-","");
+                
+                this.execBtn(textBtn);
 
             });
 
